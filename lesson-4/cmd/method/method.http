@@ -1,0 +1,33 @@
+GET http://localhost:80/
+Accept: application/json
+
+###
+POST http://localhost:80/
+Content-Type: application/json
+
+{
+  "name": "John",
+  "age": 30,
+  "salary": 3000.50
+}
+
+
+###
+
+
+POST http://localhost:80/
+Content-Type: application/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <age>30</age>
+  <name>John</name>
+  <salary>3000.5</salary>
+</root>
+
+###
+
+POST http://localhost:80/upload
+Content-Type: text/plain
+
+
