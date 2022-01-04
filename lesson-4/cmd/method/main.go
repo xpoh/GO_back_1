@@ -122,10 +122,13 @@ func main() {
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 10 * time.Second,
 	}
-	err := srv.ListenAndServe()
-	if err != nil {
-		log.Panic(err)
-	}
+
+	go func() {
+		err := srv.ListenAndServe()
+		if err != nil {
+			log.Panic(err)
+		}
+	}()
 
 	dirToServe := http.Dir(uploadHandler.UploadDir)
 
